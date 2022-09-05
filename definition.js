@@ -45,7 +45,7 @@ Blockly.Blocks['robocon_follow_line_until'] = {
   }
 };
 Blockly.Python["robocon_follow_line_until"] = function (block) {
-  Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
+  #Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
   var speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
   var condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC);
   var timeout = Blockly.Python.valueToCode(block, 'timeout', Blockly.Python.ORDER_ATOMIC);
@@ -101,7 +101,7 @@ Blockly.Blocks['robocon_follow_line_delay'] = {
 };
 
 Blockly.Python["robocon_follow_line_delay"] = function (block) {
-  Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
+  #Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
   var speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
   var timeout = Blockly.Python.valueToCode(block, 'timeout', Blockly.Python.ORDER_ATOMIC);
   var port = block.getFieldValue('port');
@@ -157,7 +157,7 @@ Blockly.Blocks['robocon_turn_until_line_detected'] = {
 };
 
 Blockly.Python["robocon_turn_until_line_detected"] = function (block) {
-  Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
+  #Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
   var m1_speed = Blockly.Python.valueToCode(block, 'm1_speed', Blockly.Python.ORDER_ATOMIC);
   var m2_speed = Blockly.Python.valueToCode(block, 'm2_speed', Blockly.Python.ORDER_ATOMIC);
   var port = block.getFieldValue('port');
