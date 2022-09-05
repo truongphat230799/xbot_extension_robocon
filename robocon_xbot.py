@@ -1,4 +1,3 @@
-import random
 import time, gc
 
 from setting import *
@@ -10,8 +9,6 @@ from speaker import *
 from ultrasonic import *
 from line_array import line_array
 from motion import motion
-import time
-
 class ROBOCON:
     def follow_line_until(speed, condition, port, timeout=10000):
         count = 0
@@ -90,6 +87,5 @@ class ROBOCON:
             time.sleep_ms(10)
 
         robot.stop()
- 
  
  
