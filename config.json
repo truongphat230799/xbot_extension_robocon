@@ -2,7 +2,7 @@
     "name": "ROBOCON",
     "description": "Thư viện khối lệnh bổ sung cho thi đấu Robocon của robot xBot",
     "libs": [
-        "robocon.py"
+        "robocon_xbot.py"
     ],
     "blocks": [
         "definition.js"
