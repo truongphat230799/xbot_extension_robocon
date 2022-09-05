@@ -1,3 +1,16 @@
+import random
+import time, gc
+
+from setting import *
+from utility import *
+
+from motor import motor
+from servo import servo
+from speaker import *
+from ultrasonic import *
+from line_array import line_array
+from motion import motion
+
 import time
 def follow_line_until(speed, condition, port, timeout=10000):
     count = 0
