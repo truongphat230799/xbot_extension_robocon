@@ -1,4 +1,4 @@
-
+import time
 def follow_line_until(speed, condition, port, timeout=10000):
     count = 0
     last_time = time.ticks_ms()
@@ -77,15 +77,6 @@ def turn_until_condition(m1_speed, m2_speed, condition, timeout=5000):
         time.sleep_ms(10)
 
     robot.stop()
-    
-
-if True:
-  follow_line_until(30, lambda: (color_sensor.detect(3, 'r')),1 , 5000)
-  follow_line_until(30, lambda: not(color_sensor.detect(3, 'r')),1 , 5000)
-  follow_line_until(30, lambda: (color_sensor.detect(3, 'r')),1 , 5000)
-  #turn_until_condition(25, 0, lambda : (ultrasonic.distance_cm(1) < 10), timeout=10000)
-  #turn_until_line_detected(25, 0, 1, timeout = 5000)
-  #follow_line_until(30, lambda: (line_array.read(1) == (0, 0, 0, 0)), 10000)
  
  
  
