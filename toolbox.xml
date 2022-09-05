@@ -1,5 +1,5 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category name="ROBOCON" colour="#cb2026" icon="flag">
+  <category name="ROBOCON" colour="#44cbc6" icon="flag">
     <block type="robocon_follow_line_until">
       <value name="speed">
         <shadow type="math_number">
