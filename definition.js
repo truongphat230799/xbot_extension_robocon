@@ -4,7 +4,7 @@ Blockly.Blocks['robocon_follow_line_until'] = {
     this.jsonInit(
       {
         "type": "robocon_follow_line_until",
-        "message0": "dò line tốc độ %1 đến khi %2 tối đa %3 giây dùng cảm biến dò line ở cổng %4",
+        "message0": "dò line cổng %4 tốc độ %1 đến khi %2 tối đa %3 giây",
         "args0": [
           {
               type: "input_value",
@@ -61,7 +61,7 @@ Blockly.Blocks['robocon_follow_line_delay'] = {
     this.jsonInit(
       {
         "type": "robocon_follow_line_delay",
-        "message0": "dò line với tốc độ %1 (0-100) trong %2 giây dùng cảm biến dò line cổng %3",
+        "message0": "dò line cổng %3 với tốc độ %1 (0-100) trong %2 giây",
         "args0": [
           
           {
@@ -118,7 +118,7 @@ Blockly.Blocks['robocon_turn_until_line_detected'] = {
     this.jsonInit(
       {
         "type": "robocon_move_motor",
-        "message0": "quay động cơ trái %1 phải %2 đến khi gặp vạch đen tối đa %3 giây dùng cảm biến dò line cổng %4",
+        "message0": "cảm biến dò line cổng %4 quay động cơ trái %1 phải %2 đến khi gặp vạch đen tối đa %3 giây",
         "args0": [
           {
             "type": "input_value",
