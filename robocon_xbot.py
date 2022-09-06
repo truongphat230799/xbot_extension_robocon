@@ -21,8 +21,6 @@ from robot import robot
 from ble import ble_o, ble
 #from wifi import *
 def follow_line_until(speed, condition, port, timeout=10000):
-
-
     count = 0
     last_time = time.ticks_ms()
 
@@ -33,23 +31,25 @@ def follow_line_until(speed, condition, port, timeout=10000):
                 break
 
         if speed >= 0:
-            if line_array.read(port) == (1, 0, 0, 0):
-                robot.turn_left(70 if speed > 50 else 50)
-            elif line_array.read(port) == (1, 1, 0, 0):
-                robot.turn_left(speed)
-            elif line_array.read(port) == (0, 0, 0, 1):
-                robot.turn_right((70 if speed > 50 else 50))
-            elif line_array.read(port) == (0, 0, 1, 1):
-                robot.turn_right(speed)
-            elif line_array.read(port) == (0, 0, 0, 0):
-                robot.backward(25)
+            if rover.read_line_sensors(port) == (1, 0, 0, 0):
+                rover.turn_left(70 if speed > 50 else 50)
+            elif rover.read_line_sensors(port) == (1, 1, 0, 0):
+                rover.turn_left(speed)
+            elif rover.read_line_sensors(port) == (0, 0, 0, 1):
+                rover.turn_right(70 if speed > 50 else 50)
+            elif rover.read_line_sensors(port) == (0, 0, 1, 1):
+                rover.turn_right(speed)
+            elif rover.read_line_sensors(port) == (0, 0, 0, 0):
+                if count == 0:
+                    rover.backward(speed)
             else:
-                robot.forward(30)
+                rover.forward(speed)
+        else:
+            rover.backward(abs(speed))
 
+        time.sleep_ms(10)
 
-        time.sleep_ms(20)
-
-    robot.stop()
+    rover.stop()
 
 def turn_until_line_detected(m1_speed, m2_speed, port, timeout=5000):
     count = 0
