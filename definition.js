@@ -50,9 +50,9 @@ Blockly.Python["robocon_follow_line_until"] = function (block) {
   var timeout = Blockly.Python.valueToCode(block, 'timeout', Blockly.Python.ORDER_ATOMIC);
   var port = block.getFieldValue('port');
   Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
-  Blockly.Python.definitions_['follow_line_until'] = 'follow_line_until(' + speed + ', ' + 'lambda: (' + condition  + '), ' + port + ','+ timeout*1000 +')\n';
+  #Blockly.Python.definitions_['follow_line_until'] = 'follow_line_until(' + speed + ', ' + 'lambda: (' + condition  + '), ' + port + ','+ timeout*1000 +')\n';
   // TODO: Assemble Python into code variable.
-  var code = '';
+  var code = "follow_line_until(" + speed + ", " + "lambda: (" + condition  + "), " + port + ","+ timeout*1000 +")\n";
   return code;
 };
 
@@ -106,10 +106,10 @@ Blockly.Python["robocon_follow_line_delay"] = function (block) {
   var timeout = Blockly.Python.valueToCode(block, 'timeout', Blockly.Python.ORDER_ATOMIC);
   var port = block.getFieldValue('port');
   Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
-  Blockly.Python.definitions_['follow_line_delay'] = 'follow_line_until(' + speed + ', ' + 'lambda: (False),' + port + ','+ timeout*1000 +')\n';
+  #Blockly.Python.definitions_['follow_line_delay'] = 'follow_line_until(' + speed + ', ' + 'lambda: (False),' + port + ','+ timeout*1000 +')\n';
   
   // TODO: Assemble Python into code variable.
-  var code = '';
+  var code = "follow_line_until(" + speed + ", " + "lambda: (False), " + port +","+ timeout*1000 +")\n";
   return code;
 };
 
@@ -166,9 +166,8 @@ Blockly.Python["robocon_turn_until_line_detected"] = function (block) {
   var timeout = Blockly.Python.valueToCode(block, 'timeout', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
-  Blockly.Python.definitions_['turn_until_line_detected'] = 'turn_until_line_detected(' + m1_speed + ', ' + m2_speed + ', ' + port + ',' + timeout*1000 +')\n';
-  
-  var code = '';
+  #Blockly.Python.definitions_['turn_until_line_detected'] = 'turn_until_line_detected(' + m1_speed + ', ' + m2_speed + ', ' + port + ',' + timeout*1000 +')\n';
+  var code = "turn_until_line_detected(" + m1_speed + ", " + m2_speed + ", " + port + "," + timeout*1000 +")\n";
   return code;
 };
 
@@ -218,7 +217,7 @@ Blockly.Python["robocon_turn_until_condition"] = function (block) {
   var timeout = Blockly.Python.valueToCode(block, 'timeout', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_robocon'] = 'from robocon_xbot import *';
-  Blockly.Python.definitions_['turn_until_condition'] = 'turn_until_condition(' + m1_speed + ', ' + m2_speed + ', ' + 'lambda: (' + condition  + '), ' + timeout*1000 +')\n';
-  var code = '';
+  #Blockly.Python.definitions_['turn_until_condition'] = 'turn_until_condition(' + m1_speed + ', ' + m2_speed + ', ' + 'lambda: (' + condition  + '), ' + timeout*1000 +')\n';
+  var code = "turn_until_condition(" + m1_speed + ", " + m2_speed + ", " + "lambda: (" + condition  + "), " + timeout*1000 +")\n";
   return code;
 };
