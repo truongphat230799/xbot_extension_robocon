@@ -47,7 +47,7 @@ def follow_line_until(speed, condition, port, timeout=10000):
                 robot.forward(30)
 
 
-        time.sleep_ms(10)
+        time.sleep_ms(20)
 
     robot.stop()
 
