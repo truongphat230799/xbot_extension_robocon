@@ -36,7 +36,7 @@ def follow_line(speed, port):
 
     now = line_array.read(port)
     if now == (0, 0, 0, 0): #no line found
-	robot.back_ward(speed)
+        robot.backward(speed)
     else:
         if (now[1], now[2]) == (1, 1):
             if m_dir == 0:
@@ -153,4 +153,3 @@ def turn_until_condition(m1_speed, m2_speed, condition, timeout=5000):
         time.sleep_ms(10)
 
     robot.stop()
- 
