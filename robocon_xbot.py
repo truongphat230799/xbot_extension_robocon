@@ -35,8 +35,8 @@ def follow_line(speed, port):
     global m_dir, i_lr, t_finding_point
 
     now = line_array.read(port)
-    if now == (0, 0, 0, 0): #no line found
-        #robot.backward(speed)
+    if now == (0, 0, 0, 0): 
+        #no line found
             if m_dir < 4:                            
                 m_dir += 4 #change to go backward or stronger turn
                 robot.set_wheel_speed( speed * speed_factors[m_dir][i_lr], speed * speed_factors[m_dir][1-i_lr] )
@@ -106,13 +106,13 @@ def follow_line_until(speed, condition, port, timeout=10000):
 
 def turn_until_line_detected(m1_speed, m2_speed, port, timeout=5000):
     count = 0
-    sensor_index = 2
-    sensor_indices = [1, 2]
+    sensor_index = 1
+    sensor_indices = [0, 1]
     sensor1 = 0
     sensor2 = 0
     if m1_speed > m2_speed:
-        sensor_index = 3
-        sensor_indices = [3, 4]
+        sensor_index = 2
+        sensor_indices = [2, 3]
  
     last_line_status = line_array.read(port, sensor_index)
   
@@ -161,3 +161,4 @@ def turn_until_condition(m1_speed, m2_speed, condition, timeout=5000):
         time.sleep_ms(10)
 
     robot.stop()
+
